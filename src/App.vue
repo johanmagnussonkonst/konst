@@ -1,30 +1,39 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <div
+    class="h-screen w-screen mx-auto text-gray-700 relative flex flex-col overflow-hidden"
+  >
+    <nav
+      class="flex px-4 py-2 justify-between mx-auto w-full flex-wrap bg-white drop-shadow-sm relative"
+    >
+      <div
+        style="background-color: #7a1f00"
+        class="w-2 h-full -ml-4 -mt-2 absolute"
+      ></div>
+
+      <h1
+        class="mr-4 box-content text-3xl md:text-4xl uppercase transition-all"
+      >
+        Johan Magnusson
+      </h1>
+      <div class="flex items-end text-2xl gap-4">
+        <router-link class="terra-link" to="/">VERK</router-link> |
+        <router-link class="terra-link" to="/about">OM MIG</router-link> |
+        <InstagramLink />
+      </div>
+    </nav>
+
+    <div class="w-full p-4 box-sizing flex-1 overflow-auto">
+      <router-view />
+    </div>
+  </div>
 </template>
+<script>
+import InstagramLink from "@/components/InstagramLink.vue";
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+export default {
+  name: "HomeView",
+  components: {
+    InstagramLink,
+  },
+};
+</script>

@@ -16,6 +16,13 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
+  { path: "/art", redirect: "/" },
+  {
+    path: "/art/:id",
+    name: "art",
+    component: () => import("../views/ArtView.vue"),
+    props: true,
+  },
 ];
 
 const router = createRouter({
