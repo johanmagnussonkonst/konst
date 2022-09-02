@@ -8,7 +8,6 @@
         class="max-w-full max-h-72 mx-auto"
         :src="require(`../assets/art/` + formattedFolder + image + '')"
       />
-      <div></div>
     </div>
   </router-link>
 </template>

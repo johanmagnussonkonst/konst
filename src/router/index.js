@@ -20,7 +20,7 @@ const routes = [
   {
     path: "/art/:id",
     name: "art",
-    component: () => import("../views/ArtView.vue"),
+    component: () => import("../views/GalleryView.vue"),
     props: true,
   },
 ];

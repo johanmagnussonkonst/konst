@@ -1,5 +1,20 @@
 <template>
   <div class="px-4">
+    <div
+      class="absolute -ml-8 bg-white max-h-full max-w-full w-full h-full z-40"
+      v-if="showModal"
+    >
+      <div
+        @click="closeModal"
+        class="absolute w-full text-right text-4xl p-2 font-bold cursor-pointer"
+      >
+        ✕
+      </div>
+      <img
+        class="mx-auto max-h-full max-w-full object-cover"
+        :src="require(`../assets/art/` + folderName + activeImage.name + '')"
+      />
+    </div>
     <h2 class="text-2xl md:text-3xl">{{ $route.params.id }}</h2>
     <p class="pt-2 pb-8 max-w-3xl">
       {{ description }}
@@ -9,6 +24,7 @@
         class="flex flex-col justify-end"
         v-for="(image, index) in images"
         :key="index"
+        @click="openModal(image)"
       >
         <img
           class="max-w-sm max-h-72 mx-auto"
@@ -30,6 +46,9 @@ export default {
       description: "",
       images: [],
       folderName: "",
+      showModal: false,
+      activeImage: "",
+      oldPos: 0,
     };
   },
 
@@ -50,6 +69,23 @@ export default {
 
   mounted() {
     window.scrollTo(0, 0);
+  },
+
+  methods: {
+    openModal(image) {
+      this.showModal = true;
+      this.activeImage = image;
+
+      if (window.scrollY) {
+        this.oldPos = window.scrollY;
+        window.scrollTo(0, 0);
+      }
+    },
+    closeModal() {
+      this.showModal = false;
+
+      window.scrollTo(0, this.oldPos);
+    },
   },
 };
 </script>
