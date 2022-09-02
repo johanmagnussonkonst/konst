@@ -15,7 +15,7 @@
     </p>
     <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <li
-        class="flex flex-col justify-end"
+        class="flex flex-col justify-end cursor-pointer"
         v-for="(image, index) in images"
         :key="index"
         @click="openModal(image)"
