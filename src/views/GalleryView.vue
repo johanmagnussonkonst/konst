@@ -21,7 +21,7 @@
         @click="openModal(image)"
       >
         <img
-          class="max-w-sm max-h-72 mx-auto"
+          class="max-w-auto max-h-72 mx-auto"
           :src="require(`../assets/art/` + folderName + image.name + '')"
         />
         <h3 class="text-xl pt-2 text-center">{{ image.displayName }}</h3>
