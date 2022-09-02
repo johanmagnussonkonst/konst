@@ -1,7 +1,7 @@
 <template>
   <router-link class="h-full w-full flex" :to="'/art/' + title">
     <div
-      class="w-full drop-shadow-sm border-2 border-gray-200 p-4 box-content bg-slate-50 hover:bg-gray-100 transition-all relative overflow-hidden"
+      class="w-full border-2 border-slate-100 drop-shadow-sm p-4 box-content bg-slate-50 hover:bg-gray-100 transition-all relative overflow-hidden"
     >
       <h3 class="capitalize text-2xl mb-4 text-center">{{ title }}</h3>
       <img
