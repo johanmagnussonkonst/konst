@@ -20,7 +20,7 @@
       </div>
     </nav>
 
-    <div class="w-full p-4 box-sizing overflow-auto">
+    <div class="h-full w-full p-4 box-sizing overflow-auto">
       <router-view />
     </div>
   </div>

@@ -1,20 +1,14 @@
 <template>
-  <div class="px-4">
-    <div
-      class="absolute -ml-8 bg-white max-h-full max-w-full w-full h-full z-40"
-      v-if="showModal"
-    >
-      <div
-        @click="closeModal"
-        class="w-full text-right text-4xl p-2 font-bold cursor-pointer"
-      >
-        ✕
-      </div>
-      <img
-        class="mx-auto max-h-full max-w-full object-cover"
-        :src="require(`../assets/art/` + folderName + activeImage.name + '')"
-      />
+  <div class="bg-white mx-auto" v-if="showModal">
+    <div class="mx-auto text-right text-4xl font-bold cursor-pointer">
+      <span @click="closeModal"> ✕ </span>
     </div>
+    <img
+      class="mx-auto max-h-full max-w-full object-cover"
+      :src="require(`../assets/art/` + folderName + activeImage.name + '')"
+    />
+  </div>
+  <div v-else class="px-4">
     <h2 class="text-2xl md:text-3xl">{{ $route.params.id }}</h2>
     <p class="pt-2 pb-8 max-w-3xl">
       {{ description }}
