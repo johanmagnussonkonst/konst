@@ -5,7 +5,7 @@
     <img src="@\assets\hero.png" />
   </section>
   <section class="box-sizing">
-    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <li v-for="(section, index) in artData" :key="section.name + index">
         <ArtLink
           :folder="section.name"
