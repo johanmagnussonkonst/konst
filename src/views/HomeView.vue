@@ -22,25 +22,8 @@ export default {
   components: { ArtLink },
   data() {
     return {
-      titles: [
-        "hello",
-        "is",
-        "it",
-        "me",
-        "you're",
-        "looking",
-        "for?",
-        "hello",
-        "is",
-        "it",
-        "me",
-        "you're",
-        "looking",
-        "for?",
-      ],
+      titles: ["hello", "is", "it", "me", "you're", "looking", "for?"],
     };
   },
 };
 </script>
-
-<style lang="scss" scoped></style>

@@ -1,9 +1,7 @@
 <template>
-  <div
-    class="h-screen w-screen mx-auto text-gray-700 relative flex flex-col overflow-hidden"
-  >
+  <div class="h-full w-full max-w-7xl mx-auto text-gray-700 relative">
     <nav
-      class="flex px-4 py-2 justify-between mx-auto w-full flex-wrap bg-white drop-shadow-sm relative"
+      class="flex px-4 py-2 justify-between mx-auto w-full flex-wrap bg-white drop-shadow-sm relative sticky top-0"
     >
       <div
         style="background-color: #7a1f00"
@@ -22,7 +20,7 @@
       </div>
     </nav>
 
-    <div class="w-full p-4 box-sizing flex-1 overflow-auto">
+    <div class="w-full p-4 box-sizing overflow-auto">
       <router-view />
     </div>
   </div>
