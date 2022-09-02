@@ -1,15 +1,17 @@
 <template>
-  <section class="border-2 max-h-96 border-gray-500 overflow-hidden box-sizing">
-    <img
-      class="max-w-sm mx-auto"
-      style="height: 500px"
-      src="@\assets\logo.png"
-    />
+  <section
+    class="border-2 max-h-96 border-gray-500 overflow-hidden box-sizing mb-8"
+  >
+    <img src="@\assets\hero.png" />
   </section>
-  <section class="py-4 box-sizing">
-    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <li v-for="(title, index) in titles" :key="title + index">
-        <ArtLink :title="title" image="logo.png" />
+  <section class="box-sizing">
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <li v-for="(section, index) in artData" :key="section.name + index">
+        <ArtLink
+          :folder="section.name"
+          :title="section.displayName"
+          :image="section.children[0].name"
+        />
       </li>
     </ul>
   </section>
@@ -17,13 +19,19 @@
 
 <script>
 import ArtLink from "@/components/ArtLink.vue";
+import ArtJson from "../art.json";
 export default {
   name: "HomeView",
   components: { ArtLink },
   data() {
     return {
+      artData: [],
       titles: ["hello", "is", "it", "me", "you're", "looking", "for?"],
     };
+  },
+
+  mounted() {
+    this.artData = ArtJson;
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="h-full w-full max-w-7xl mx-auto text-gray-700 relative">
     <nav
-      class="flex px-4 py-2 justify-between mx-auto w-full flex-wrap bg-white drop-shadow-sm relative sticky top-0"
+      class="flex px-4 py-2 justify-between mx-auto w-full flex-wrap bg-white drop-shadow-sm relative sticky top-0 z-50"
     >
       <div
         style="background-color: #7a1f00"
