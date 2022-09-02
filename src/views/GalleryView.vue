@@ -6,7 +6,7 @@
     >
       <div
         @click="closeModal"
-        class="absolute w-full text-right text-4xl p-2 font-bold cursor-pointer"
+        class="w-full text-right text-4xl p-2 font-bold cursor-pointer"
       >
         ✕
       </div>
