@@ -18,7 +18,7 @@ var directoryTreeToObj = function (dir, done) {
       });
     }
 
-    list.forEach(function (file, fileIndex) {
+    list.forEach(function (file) {
       file = path.resolve(dir, file);
       fs.stat(file, function (err, stat) {
         if (stat && stat.isDirectory()) {
@@ -34,10 +34,10 @@ var directoryTreeToObj = function (dir, done) {
               }
             });
 
-            const newName = "folder" + fileIndex;
+            //const newName = "folder" + fileIndex;
 
             results.push({
-              name: newName,
+              name: name,
               displayName: name,
               description: description,
               type: "folder",
@@ -54,15 +54,15 @@ var directoryTreeToObj = function (dir, done) {
             name.includes(".jpeg")
           ) {
             // rename files to avoid issues with åäö
-            const fileEnding = name.substring(name.lastIndexOf(".") + 1);
+            /*const fileEnding = name.substring(name.lastIndexOf(".") + 1);
             const newName = "file" + fileIndex + "." + fileEnding;
             const newPath =
               file.substring(0, file.lastIndexOf("\\")) + "\\" + newName;
-            fs.rename(file, newPath, () => {});
+            fs.rename(file, newPath, () => {});*/
 
             results.push({
               type: "file",
-              name: newName,
+              name: name,
               displayName: name.substring(0, name.lastIndexOf(".")),
             });
           }
@@ -91,7 +91,7 @@ directoryTreeToObj(dirTree, function (err, res) {
   console.log("building art.json");
   if (err) console.error(err);
 
-  fs.readdir(dirTree, function (err, list) {
+  /*fs.readdir(dirTree, function (err, list) {
     list.forEach(function (file, fileIndex) {
       file = path.resolve(dirTree, file);
 
@@ -104,7 +104,7 @@ directoryTreeToObj(dirTree, function (err, res) {
         }
       });
     });
-  });
+  });*/
 
   var collator = new Intl.Collator(undefined, {
     numeric: true,
