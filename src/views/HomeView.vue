@@ -10,7 +10,7 @@
         <ArtLink
           :folder="section.name"
           :title="section.displayName"
-          :image="section.children[0].name"
+          :image="getImage(section)"
         />
       </li>
     </ul>
@@ -26,12 +26,31 @@ export default {
   data() {
     return {
       artData: [],
-      titles: ["hello", "is", "it", "me", "you're", "looking", "for?"],
     };
   },
 
   mounted() {
     this.artData = ArtJson;
+  },
+
+  methods: {
+    getImage(section) {
+      // returns the first image
+      let res = section.children.find((element) => {
+        return (
+          element.name.includes(".jpg") ||
+          element.name.includes(".png") ||
+          element.name.includes(".jpeg")
+        );
+      });
+
+      // if no image return the first grandchild
+      if (!res && section.children[0].type === "folder") {
+        res = section.children[0].name;
+      }
+
+      return res.name;
+    },
   },
 };
 </script>

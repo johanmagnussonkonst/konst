@@ -1,5 +1,5 @@
 <template>
-  <router-link class="h-full w-full flex" :to="'/art/' + title">
+  <router-link class="h-full w-full flex" :to="'/art/' + (link || title)">
     <div
       class="w-full p-4 box-content hover:bg-slate-50 transition-all relative overflow-hidden"
     >
@@ -16,6 +16,10 @@
 export default {
   props: {
     title: {
+      type: String,
+      default: "",
+    },
+    link: {
       type: String,
       default: "",
     },

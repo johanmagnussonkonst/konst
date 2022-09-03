@@ -18,7 +18,7 @@ const routes = [
   },
   { path: "/art", redirect: "/" },
   {
-    path: "/art/:id",
+    path: "/art/:id/:id2?",
     name: "art",
     component: () => import("../views/GalleryView.vue"),
     props: true,
